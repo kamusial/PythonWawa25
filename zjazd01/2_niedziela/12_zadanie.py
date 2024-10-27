@@ -7,7 +7,7 @@ while True:
     except:
         print('Jeszcze raz')
 
-str_number = str(number)   # zamiana na stringa
+str_number = str(number)   # zamiana na string
 sum = 0
 for digit in str_number:
     sum += int(digit)
