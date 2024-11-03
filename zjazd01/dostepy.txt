@@ -1,0 +1,7 @@
+Dostęp do maszyny wirtualnej:
+https://vlabs.wsb.wroclaw.pl/portal/webclient/index.html
+User: student-wroclaw
+Password: Hor#055km
+
+Repozytorium kodu:
+https://github.com/kamusial/PythonWawa25
