@@ -4,3 +4,6 @@ print(splitted_sentence)
 
 print(sentence.replace('a','A', 3))
 print(sentence.replace(' ','', 3))
+
+
+print('piesek'[::-1])

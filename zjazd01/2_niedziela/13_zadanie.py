@@ -1,7 +1,8 @@
-# sprawdź, czy wprowadzone słowo jest anagaram
+# sprawdź, czy wprowadzone słowo jest anagaram / palindrom
 # sprawdź to dla listy wprowadzonych slow
 
 word = input('Podaj slowo:   ')
+# word = word.replace(' ','').lower()
 no_of_iterations = len(word) // 2    # czesc calkowita z dzielenia
 
 for i in range(no_of_iterations):
@@ -10,7 +11,7 @@ for i in range(no_of_iterations):
         break
 
 # prostrzy sposob
-if word == word[::-1]:
+if word.replace(' ','').lower() == word[::-1].replace(' ','').lower():
     print('ok')
 else:
     print('nok')
