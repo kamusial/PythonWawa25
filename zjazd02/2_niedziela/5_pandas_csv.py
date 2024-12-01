@@ -1,4 +1,6 @@
-import pandas
+import pandas as pd
 
-file = pandas.read_csv('real_2016_air.csv')
-print(file)
+df = pd.read_csv('real_2016_air.csv')
+print(df)
+print(type(df))
+
