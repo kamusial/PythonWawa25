@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver import Keys
 from time import sleep
 
 # import time
@@ -14,8 +15,9 @@ sleep(2)
 search_field = driver.find_element('name', 'q')
 search_field.send_keys('Kto gra na narodowym?')
 sleep(2)
-search_button = driver.find_element('name', 'btnK')
-search_button.click()
-sleep(2)
-driver.quit()
+search_field.send_keys(Keys.ENTER)
+# search_button = driver.find_element('name', 'btnK')
+# search_button.click()
+input('Czekam na enter')
 
+driver.quit()
