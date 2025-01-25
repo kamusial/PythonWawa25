@@ -1,74 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.11.2 on win32)" generated="2025-01-25T13:57:21.943036" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.11.2 on win32)" generated="2025-01-25T14:56:02.334912" rpa="false" schemaversion="5">
 <suite id="s1" name="7 Robot Basic" source="C:\Users\vdi-student\Desktop\PythonWawa25\zjazd04\7_robot_basic.robot">
-<test id="s1-t1" name="Log in wikipedia" line="11">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-25T13:57:22.278089" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
+<test id="s1-t1" name="Unsuccesfull login" line="27">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-01-25T14:56:02.660131" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
 <arg>https://pl.wikipedia.org</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-25T13:57:22.278089" elapsed="2.018344"/>
+<status status="PASS" start="2025-01-25T14:56:02.660131" elapsed="2.015121"/>
 </kw>
+<kw name="Log in wikipedia">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-25T13:57:24.298406" level="INFO">Clicking element 'pt-login-2'.</msg>
+<msg time="2025-01-25T14:56:04.677255" level="INFO">Clicking element 'pt-login-2'.</msg>
 <arg>pt-login-2</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-25T13:57:24.297404" elapsed="0.990124"/>
+<status status="PASS" start="2025-01-25T14:56:04.677255" elapsed="1.212233"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-25T13:57:26.292886" level="INFO">Slept 1 second.</msg>
+<msg time="2025-01-25T14:56:06.889776" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-25T13:57:25.287528" elapsed="1.005358"/>
+<status status="PASS" start="2025-01-25T14:56:05.889488" elapsed="1.000288"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-25T13:57:26.292886" level="INFO">Typing text 'Kamil' into text field 'wpName1'.</msg>
+<msg time="2025-01-25T14:56:06.889776" level="INFO">Typing text 'RobotTests' into text field 'wpName1'.</msg>
 <arg>wpName1</arg>
-<arg>Kamil</arg>
+<arg>${wikiedia login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-25T13:57:26.292886" elapsed="0.101985"/>
+<status status="PASS" start="2025-01-25T14:56:06.889776" elapsed="0.110759"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-25T13:57:26.395830" level="INFO">Typing text 'Merito' into text field 'wpPassword1'.</msg>
+<msg time="2025-01-25T14:56:07.001524" level="INFO">Typing text 'aaa' into text field 'wpPassword1'.</msg>
 <arg>wpPassword1</arg>
-<arg>Merito</arg>
+<arg>aaa</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-25T13:57:26.395830" elapsed="0.147850"/>
+<status status="PASS" start="2025-01-25T14:56:07.000535" elapsed="0.118244"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-25T13:57:27.545080" level="INFO">Slept 1 second.</msg>
+<msg time="2025-01-25T14:56:08.120068" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-25T13:57:26.543680" elapsed="1.001400"/>
+<status status="PASS" start="2025-01-25T14:56:07.119781" elapsed="1.000287"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-25T13:57:27.546219" level="INFO">Clicking element 'wpLoginAttempt'.</msg>
+<msg time="2025-01-25T14:56:08.120068" level="INFO">Clicking element 'wpLoginAttempt'.</msg>
 <arg>wpLoginAttempt</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-25T13:57:27.545080" elapsed="1.339258"/>
+<status status="PASS" start="2025-01-25T14:56:08.120068" elapsed="0.887088"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-25T13:57:29.885192" level="INFO">Slept 1 second.</msg>
+<msg time="2025-01-25T14:56:10.009820" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-25T13:57:28.884956" elapsed="1.000345"/>
+<status status="PASS" start="2025-01-25T14:56:09.007156" elapsed="1.002664"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath:/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[3]/div/form/div[1]/div</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-25T14:56:10.009820" elapsed="0.029987"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:10.069796" level="INFO">${my error message} = Wystąpił problem z wprowadzonymi danymi</msg>
+<var>${my error message}</var>
+<arg>xpath:/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[3]/div/form/div[1]/div</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:10.039807" elapsed="0.029989"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Wiadomosc: ${my error message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-25T14:56:10.069796" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2025-01-25T14:56:10.069796" level="FAIL">Wystąpił problem z wprowadzonymi danymi != Podany login lub hasło są nieprawidłowe. Spróbuj jeszcze raz.</msg>
+<arg>${my error message}</arg>
+<arg>${error message}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2025-01-25T14:56:10.069796" elapsed="0.000000">Wystąpił problem z wprowadzonymi danymi != Podany login lub hasło są nieprawidłowe. Spróbuj jeszcze raz.</status>
+</kw>
+<status status="FAIL" start="2025-01-25T14:56:04.676250" elapsed="5.393546">Wystąpił problem z wprowadzonymi danymi != Podany login lub hasło są nieprawidłowe. Spróbuj jeszcze raz.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-25T14:56:10.074814" elapsed="2.112671"/>
+</kw>
+<status status="FAIL" start="2025-01-25T14:56:02.660131" elapsed="9.527354">Wystąpił problem z wprowadzonymi danymi != Podany login lub hasło są nieprawidłowe. Spróbuj jeszcze raz.</status>
+</test>
+<test id="s1-t2" name="Wikipedia search" line="31">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-01-25T14:56:12.187485" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
+<arg>https://pl.wikipedia.org</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-25T14:56:12.187485" elapsed="2.083108"/>
+</kw>
+<kw name="Log in wikipedia">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:14.272852" level="INFO">Clicking element 'pt-login-2'.</msg>
+<arg>pt-login-2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:14.271782" elapsed="1.106924"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-25T14:56:16.379662" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-25T14:56:15.378706" elapsed="1.000956"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:16.380772" level="INFO">Typing text 'RobotTests' into text field 'wpName1'.</msg>
+<arg>wpName1</arg>
+<arg>${wikiedia login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:16.379662" elapsed="0.113145"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:16.492807" level="INFO">Typing text 'aaa' into text field 'wpPassword1'.</msg>
+<arg>wpPassword1</arg>
+<arg>aaa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:16.492807" elapsed="0.116119"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-25T14:56:17.609494" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-25T14:56:16.608926" elapsed="1.000568"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:17.610504" level="INFO">Clicking element 'wpLoginAttempt'.</msg>
+<arg>wpLoginAttempt</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:17.609494" elapsed="0.966467"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-25T14:56:19.576806" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-25T14:56:18.575961" elapsed="1.000845"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath:/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[3]/div/form/div[1]/div</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-25T14:56:19.576806" elapsed="0.029991"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:19.634794" level="INFO">${my error message} = Podany login lub hasło są nieprawidłowe. Spróbuj jeszcze raz.</msg>
+<var>${my error message}</var>
+<arg>xpath:/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[3]/div/form/div[1]/div</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-25T14:56:19.606797" elapsed="0.027997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Wiadomosc: ${my error message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-25T14:56:19.634794" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${my error message}</arg>
+<arg>${error message}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-01-25T14:56:19.634794" elapsed="0.001593"/>
+</kw>
+<status status="PASS" start="2025-01-25T14:56:14.271782" elapsed="5.364605"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-25T14:56:19.636803" level="INFO">Typing text 'Kto żądzi w Warszawie i okolicach' into text field 'search'.</msg>
+<msg time="2025-01-25T14:56:19.755123" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-25T14:56:19.755123" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=132.0.6834.111)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C335CC05+28741]
+	(No symbol) [0x00007FF7C32BFED0]
+	(No symbol) [0x00007FF7C3154DE9]
+	(No symbol) [0x00007FF7C31A2BB4]
+	(No symbol) [0x00007FF7C31A0D32]
+	(No symbol) [0x00007FF7C31CFE2A]
+	(No symbol) [0x00007FF7C319BDE6]
+	(No symbol) [0x00007FF7C31D0040]
+	(No symbol) [0x00007FF7C31EFFE1]
+	(No symbol) [0x00007FF7C31CFBD3]
+	(No symbol) [0x00007FF7C3199F43]
+	(No symbol) [0x00007FF7C319B2D1]
+	GetHandleVerifier [0x00007FF7C368DE3D+3375741]
+	GetHandleVerifier [0x00007FF7C36A096A+3452330]
+	GetHandleVerifier [0x00007FF7C369671D+3410781]
+	GetHandleVerifier [0x00007FF7C342653B+854395]
+	(No symbol) [0x00007FF7C32CBE0F]
+	(No symbol) [0x00007FF7C32C7714]
+	(No symbol) [0x00007FF7C32C78AD]
+	(No symbol) [0x00007FF7C32B6189]
+	BaseThreadInitThunk [0x00007FFB739A7374+20]
+	RtlUserThreadStart [0x00007FFB745BCC91+33]
+</msg>
+<arg>search</arg>
+<arg>Kto żądzi w Warszawie i okolicach</arg>
+<arg>False</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-25T14:56:19.636803" elapsed="0.121322">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=132.0.6834.111)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C335CC05+28741]
+	(No symbol) [0x00007FF7C32BFED0]
+	(No symbol) [0x00007FF7C3154DE9]
+	(No symbol) [0x00007FF7C31A2BB4]
+	(No symbol) [0x00007FF7C31A0D32]
+	(No symbol) [0x00007FF7C31CFE2A]
+	(No symbol) [0x00007FF7C319BDE6]
+	(No symbol) [0x00007FF7C31D0040]
+	(No symbol) [0x00007FF7C31EFFE1]
+	(No symbol) [0x00007FF7C31CFBD3]
+	(No symbol) [0x00007FF7C3199F43]
+	(No symbol) [0x00007FF7C319B2D1]
+	GetHandleVerifier [0x00007FF7C368DE3D+3375741]
+	GetHandleVerifier [0x00007FF7C36A096A+3452330]
+	GetHandleVerifier [0x00007FF7C369671D+3410781]
+	GetHandleVerifier [0x00007FF7C342653B+854395]
+	(No symbol) [0x00007FF7C32CBE0F]
+	(No symbol) [0x00007FF7C32C7714]
+	(No symbol) [0x00007FF7C32C78AD]
+	(No symbol) [0x00007FF7C32B6189]
+	BaseThreadInitThunk [0x00007FFB739A7374+20]
+	RtlUserThreadStart [0x00007FFB745BCC91+33]
+</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>screen.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-01-25T14:56:19.758125" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-25T13:57:29.885301" elapsed="2.108864"/>
+<status status="NOT RUN" start="2025-01-25T14:56:19.759122" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-01-25T13:57:22.278089" elapsed="9.717080"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-25T14:56:19.759122" elapsed="2.123871"/>
+</kw>
+<status status="FAIL" start="2025-01-25T14:56:12.187485" elapsed="9.696488">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=132.0.6834.111)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7C335CC05+28741]
+	(No symbol) [0x00007FF7C32BFED0]
+	(No symbol) [0x00007FF7C3154DE9]
+	(No symbol) [0x00007FF7C31A2BB4]
+	(No symbol) [0x00007FF7C31A0D32]
+	(No symbol) [0x00007FF7C31CFE2A]
+	(No symbol) [0x00007FF7C319BDE6]
+	(No symbol) [0x00007FF7C31D0040]
+	(No symbol) [0x00007FF7C31EFFE1]
+	(No symbol) [0x00007FF7C31CFBD3]
+	(No symbol) [0x00007FF7C3199F43]
+	(No symbol) [0x00007FF7C319B2D1]
+	GetHandleVerifier [0x00007FF7C368DE3D+3375741]
+	GetHandleVerifier [0x00007FF7C36A096A+3452330]
+	GetHandleVerifier [0x00007FF7C369671D+3410781]
+	GetHandleVerifier [0x00007FF7C342653B+854395]
+	(No symbol) [0x00007FF7C32CBE0F]
+	(No symbol) [0x00007FF7C32C7714]
+	(No symbol) [0x00007FF7C32C78AD]
+	(No symbol) [0x00007FF7C32B6189]
+	BaseThreadInitThunk [0x00007FFB739A7374+20]
+	RtlUserThreadStart [0x00007FFB745BCC91+33]
+</status>
 </test>
-<status status="PASS" start="2025-01-25T13:57:21.943036" elapsed="10.053135"/>
+<status status="FAIL" start="2025-01-25T14:56:02.336906" elapsed="19.548065"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="7 Robot Basic" id="s1" pass="1" fail="0" skip="0">7 Robot Basic</stat>
+<stat name="7 Robot Basic" id="s1" pass="0" fail="2" skip="0">7 Robot Basic</stat>
 </suite>
 </statistics>
 <errors>
