@@ -18,6 +18,26 @@ tryityourself = driver.find_element(By.XPATH, '//*[@id="main"]/div[3]/a')
 tryityourself.click()
 time.sleep(1)
 
+currentWindowName = driver.current_window_handle
+windowNames = driver.window_handles
+print(currentWindowName)
+print(windowNames)
 
+# driver.switch_to.window(windowNames[1])
 
+for okno in windowNames:
+    if okno != currentWindowName:
+        driver.switch_to.window(okno)
+
+input()
+driver.switch_to.frame(driver.find_element(By.ID, 'iframeResult'))
+firstName = driver.find_element(By.ID, 'fname')
+
+if firstName.is_enabled():
+    firstName.clear()
+    firstName.send_keys('Kamil')
+else:
+    print('Nie da się wpisać')
+
+driver.close()
 driver.quit()
