@@ -1,5 +1,6 @@
 from kod import dodawanie
 
+print('Cokolwiek')
 def test_dodawanie_calkowite():
     assert dodawanie(1, 2) == 3
 
