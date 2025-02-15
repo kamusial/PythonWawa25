@@ -7,6 +7,10 @@ class LoginPage:
 
     def __init__(self, moj_driver):
         self.driver = moj_driver
+        self.username_field_id = 'user-name'
+        self.password_field_id = 'password'
+        self.login_button_xpath = '//*[@id="login-button"]'
+        self.after_login_url = 'https://www.saucedemo.com/inventory.html'
 
 
     def open(self):
@@ -17,16 +21,16 @@ class LoginPage:
         print('adres', self.driver.current_url)
 
     def enter_username(self, username):
-        field = self.driver.find_element(By.ID, 'user-name')
+        field = self.driver.find_element(By.ID, self.username_field_id)
         field.clear()
         field.send_keys(username)
 
     def enter_password(self, passwd='secret_sauce'):
-        field = self.driver.find_element(By.ID, 'password')
+        field = self.driver.find_element(By.ID, self.password_field_id)
         field.clear()
         field.send_keys(passwd)
     def click_login(self):
-        field = self.driver.find_element(By.XPATH, '//*[@id="login-button"]')
+        field = self.driver.find_element(By.XPATH, self.login_button_xpath)
         field.click()
 
     def make_screenshot(self):

@@ -4,10 +4,10 @@ from selenium import webdriver
 
 
 driver = webdriver.Chrome()
-strona = LoginPage(driver)
-strona.open()
-strona.enter_username('Kamil')
-strona.enter_password()
-strona.print_page_info()
-strona.click_login()
+page = LoginPage(driver)
+page.open()
+page.enter_username('Kamil')
+page.enter_password()
+page.print_page_info()
+page.click_login()
 sleep(3)
