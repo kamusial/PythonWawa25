@@ -35,7 +35,7 @@ while True:
         break
 
     # Dodajemy wypowiedź użytkownika do historii
-    chat_history += f"\nUser: {user_input}\nDolly:"
+    chat_history += f"\nUser: {user_input+'Answer as a advanced poem'}\nDolly:"
 
     # Tokenizujemy cały kontekst (historię rozmowy + nowy prompt)
     inputs = tokenizer(chat_history, return_tensors="pt")
