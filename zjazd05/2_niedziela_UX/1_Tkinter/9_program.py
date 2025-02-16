@@ -15,6 +15,7 @@ buttonframe = tk.Frame(root)
 buttonframe.columnconfigure(0, weight=1)
 buttonframe.columnconfigure(1, weight=3)
 buttonframe.columnconfigure(2, weight=1)
+# buttonframe.rowconfigure
 
 btn1 = tk.Button(buttonframe, text='1', font=('Arial', 15))
 btn1.grid(row=0, column=0, sticky=tk.W+tk.E, pady=10, padx=10)
