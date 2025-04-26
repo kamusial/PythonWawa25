@@ -11,3 +11,9 @@ print(df.isna().sum())
 
 print('Co jest w outcome?')
 print(df.outcome.value_counts())
+
+# tam, gdzie zera lub brak wartości
+# przypisać średnią (bez zer)
+
+for col in ['glucose', 'bloodpressure', 'skinthickness', 'insulin',
+       'bmi', 'diabetespedigreefunction', 'age']:
