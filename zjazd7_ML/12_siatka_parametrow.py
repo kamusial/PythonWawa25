@@ -27,9 +27,10 @@ print(pd.DataFrame(model.feature_importances_, X.columns))
 print('\Siatka parametrow')
 model = DecisionTreeClassifier()
 param = {
-    'max_depth': range(3, 5),
-    'max_features': range(3, 5),
-    'criterion': ['gini', 'entropy']
+    'max_depth': range(3, 30, 1),
+    'max_features': range(3, X_train.shape[1]+1),
+    'criterion': ['gini', 'entropy', 'log_loss'],
+    'min_samples_split': [2, 3, 4, 5, 6, 7, 8]
 }
 
 grid = GridSearchCV(model, param, scoring='accuracy', cv=5, verbose=2)
