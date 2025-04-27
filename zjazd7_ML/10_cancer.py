@@ -30,4 +30,18 @@ print(Counter(y))
 # print(pd.DataFrame(confusion_matrix(y_test, y_pred)))
 # print(accuracy_score(y_test, y_pred))
 # print(model.n_layers_)
+score = []
+kfold = RepeatedStratifiedKFold()
+for train, test in kfold.split(X, y):
+    model = MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=5000, activation='relu')
+    X_train, X_test = X.iloc[train, :], X.iloc[test, :]
+    y_train, y_test = y.iloc[train], y.iloc[test]
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    score.append(accuracy_score(y_test, y_pred))
+print(score)
+plt.plot(score)
+plt.grid()
+plt.show()
+
 
