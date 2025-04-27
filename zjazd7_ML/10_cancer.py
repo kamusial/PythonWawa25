@@ -33,7 +33,7 @@ print(Counter(y))
 score = []
 kfold = RepeatedStratifiedKFold()
 for train, test in kfold.split(X, y):
-    model = MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=5000, activation='relu')
+    model = MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=100, activation='relu')
     X_train, X_test = X.iloc[train, :], X.iloc[test, :]
     y_train, y_test = y.iloc[train], y.iloc[test]
     model.fit(X_train, y_train)
@@ -43,5 +43,9 @@ print(score)
 plt.plot(score)
 plt.grid()
 plt.show()
+
+import joblib
+# joblib.dump(model, 'My_model.model')
+zaladowany_model = joblib.load('My_model.model')
 
 
