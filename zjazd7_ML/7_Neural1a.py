@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Dense
 
 model = Sequential()
 model.add(Dense(1, activation='linear'))
-model.add(Dense(20, activation='relu'))
+model.add(Dense(20, activation='linear'))
 model.add(Dense(14, activation='linear'))
 # model.add(Dense(4, activation='linear'))
 model.add(Dense(1, activation='linear'))

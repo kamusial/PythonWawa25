@@ -8,7 +8,7 @@ from tensorflow.keras.layers import Dense
 x = np.arange(-2 * np.pi, 2 * np.pi, 0.1)
 
 # Obliczenie wartości funkcji sinus dla każdego x
-y = np.sin(x)
+y = np.sin(x)+rand
 
 # Tworzenie wykresu
 plt.figure(figsize=(10, 5))  # Ustawienie rozmiaru wykresu
@@ -38,11 +38,18 @@ plt.show()
 
 
 model = Sequential()
-model.add(Dense(1, input_dim=1, activation='relu'))  # Warstwa wejściowa
+model.add(Dense(1, input_dim=1, activation='linear'))  # Warstwa wejściowa
 model.add(Dense(10, activation='linear'))
-# model.add(Dense(10, activation='linear'))
-# model.add(Dense(10, activation='linear'))
-# model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='relu'))
+model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='relu'))
+model.add(Dense(10, activation='relu'))
+model.add(Dense(10, activation='relu'))
+model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='linear'))
 model.add(Dense(1))  # Warstwa wyjściowa
 model.compile(optimizer='adam', loss='mse')
 
@@ -50,7 +57,7 @@ model.compile(optimizer='adam', loss='mse')
 x_reshape = x.reshape(-1, 1)
 y_reshape = y.reshape(-1, 1)
 
-model.fit(x_reshape, y_reshape, epochs=100, verbose=2)
+model.fit(x_reshape, y_reshape, epochs=2000, verbose=2)
 
 y_pred = model.predict(x)
 plt.scatter(x, y)
