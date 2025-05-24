@@ -1,17 +1,20 @@
+import os
 from datetime import datetime, timedelta
+from pathlib import Path
+from time import sleep
 
 from fpdf import FPDF
 
-from invoice_generator import fonts
+from invoice_generator import font
 from invoice_generator.model import load, InvoiceConfig
 
 
 def header(pdf: FPDF, config: InvoiceConfig):
     pdf.cell(text="ORYGINAŁ", center=True)
     pdf.ln(10)
-    fonts.italic(pdf, 10)
+    font.italic(pdf, 10)
     pdf.cell(text="Sprzedawca/Podatnik: ")
-    fonts.normal(pdf, 6)
+    font.normal(pdf, 6)
     pdf.cell(w=0, text=f"{config.company.city}, {datetime.today().strftime("%Y-%m-%d")}", align="R")
     pdf.ln(5)
     pdf.cell(text=config.company.name)
@@ -19,13 +22,13 @@ def header(pdf: FPDF, config: InvoiceConfig):
     pdf.cell(text=config.company.address)
     pdf.ln(3)
     pdf.cell(text=f"{config.company.postal_code}, {config.company.city}")
-    fonts.italic(pdf, size=6)
+    font.italic(pdf, size=6)
     pdf.ln(3)
     pdf.cell(text="NIP: ")
-    fonts.normal(pdf, 6)
+    font.normal(pdf, 6)
     pdf.cell(text=config.company.nip)
     pdf.ln(3)
-    fonts.normal(pdf, 8)
+    font.normal(pdf, 8)
     pdf.cell(w=0, text=f"Bank: {config.account.bank_name}", align="R")
     pdf.ln(5)
     pdf.cell(w=0, text=f"Konto: {config.account.number} {config.account.currency}", align="R")
@@ -35,9 +38,9 @@ def header(pdf: FPDF, config: InvoiceConfig):
 
 
 def buyer_asset(pdf: FPDF, key: str, value: str):
-    fonts.italic(pdf)
+    font.italic(pdf)
     pdf.cell(w=20, text=key)
-    fonts.normal(pdf, size=6)
+    font.normal(pdf, size=6)
     pdf.cell(text=value)
     pdf.ln(3)
 
@@ -57,7 +60,7 @@ def table_cell(pdf: FPDF, w: int, text: str, new_x="RIGHT", new_y="LAST"):
     pdf.y -= 2
 
 def items(pdf: FPDF, config: InvoiceConfig):
-    fonts.normal(pdf, size=8)
+    font.normal(pdf, size=8)
     table_cell(pdf, 100, "Nazwa")
     table_cell(pdf, 20, "% VAT")
     table_cell(pdf, 30, "Cena NETTO")
@@ -75,7 +78,7 @@ def items(pdf: FPDF, config: InvoiceConfig):
         pdf.y += 2
 
     pdf.ln(10)
-    fonts.bold(pdf, size=15)
+    font.bold(pdf, size=15)
     pdf.cell(text=f"Do zapłaty: {"%.2f" % round(total, 2)} {config.account.currency}")
 
 
@@ -83,9 +86,9 @@ def main():
     pdf = FPDF()
     pdf.add_page()
     config = load("config.json")
-    fonts.create(pdf)
+    font.create(pdf)
 
-    fonts.normal(pdf, 12)
+    font.normal(pdf, 12)
     header(pdf, config)
     buyer(pdf, config)
     items(pdf, config)

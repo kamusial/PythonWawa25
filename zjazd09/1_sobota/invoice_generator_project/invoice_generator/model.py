@@ -43,3 +43,12 @@ class InvoiceConfig(BaseModel):
 def load(config_filepath: str | Path) -> InvoiceConfig:
     config = json.load(open(config_filepath, encoding="UTF-8"))
     return InvoiceConfig(**config)
+
+
+def gen_schema():
+    with open("schema.json", "w+") as schema_file:
+        schema_file.write(json.dumps(InvoiceConfig.model_json_schema(), indent=4))
+
+
+if __name__ == '__main__':
+    gen_schema()
