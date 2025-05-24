@@ -6,16 +6,37 @@ from pydantic import BaseModel
 
 class Company(BaseModel):
     name: str
-    address1: str
-    postal_code: str
-    city: str
-    nip: str
-    bank: str
-    account: str
+    postal_code: str = ""
+    city: str = ""
+    address: str = ""
+    nip: str = ""
+    regon: str = ""
+
+
+class Account(BaseModel):
+    bank_name: str
+    number: str
+    currency: str
+
+
+class Invoice(BaseModel):
+    no_this_month: int
+    company: Company
+    payment_method: str
+    payment_period: int
+
+
+class Item(BaseModel):
+    name: str
+    net: float
+    tax: float
 
 
 class InvoiceConfig(BaseModel):
     company: Company
+    account: Account
+    invoice: Invoice
+    items: list[Item]
 
 
 

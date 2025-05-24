@@ -1,11 +1,36 @@
 {
   "company": {
     "name": "QA Michał Szajkowski",
-    "address1": "Blabla",
-    "postal_code": "01-234",
-    "city": "Warszawa",
-    "nip": "123456789",
-    "bank": "Santander Bank Polska",
-    "account": "12 1234 1232"
-  }
+    "postal_code": "53-658",
+    "city": "Wrocław",
+    "address": "Długa 1/2",
+    "nip": "123456789"
+  },
+  "account": {
+    "bank_name": "Santander Bank Polska",
+    "number": "48 1090 2529 0000 0001 5134 1111",
+    "currency": "PLN"
+  },
+  "invoice": {
+    "no_this_month": 1,
+    "company": {
+      "name": "Merajto",
+      "nip": "58426546",
+      "regon": "498645122"
+    },
+    "payment_method": "przelew",
+    "payment_period": 10
+  },
+  "items": [
+    {
+      "name": "Poprowadzenie zajęć w miesiącu maj 2025",
+      "net": 69,
+      "tax": 23
+    },
+    {
+      "name": "Przygotowanie materiałów",
+      "net": 69,
+      "tax": 8
+    }
+  ]
 }

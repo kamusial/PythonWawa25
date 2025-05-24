@@ -1,1 +1,4 @@
-from invoice_generator import main
+from invoice_generator.main import main
+
+
+main()
