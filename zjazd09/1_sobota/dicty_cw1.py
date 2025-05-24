@@ -26,5 +26,7 @@ config = {
 
 
 print(json.dumps(config, indent=4))
-
 print(config["company"]["name"])
+
+# get tax of 1st item
+print(config["items"][0]["tax"])
