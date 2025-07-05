@@ -3,10 +3,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 penguins = sns.load_dataset('penguins')
-# print(type(penguins))
-# print(penguins.head().to_string())
-# sns.pairplot(penguins, hue='species')
-# plt.show()
+print(type(penguins))
+print(penguins.head().to_string())
+sns.pairplot(penguins, hue='species')
+plt.show()
 
 penguins_filtered = penguins.drop(columns=['island', 'sex']).dropna()
 print(penguins_filtered.head().to_string())
@@ -21,8 +21,8 @@ from tensorflow import keras
 inputs = keras.Input(shape=[X_train.shape[1]])
 hidden_layer1 = keras.layers.Dense(20, activation='relu')(inputs)
 hidden_layer2 = keras.layers.Dense(20, activation='linear')(hidden_layer1)
-hidden_layer3 = keras.layers.Dense(20, activation='linear')(hidden_layer2)
-hidden_layer4 = keras.layers.Dense(20, activation='linear')(hidden_layer3)
+hidden_layer3 = keras.layers.Dense(20, activation='relu')(hidden_layer2)
+hidden_layer4 = keras.layers.Dense(20, activation='relu')(hidden_layer3)
 hidden_layer5 = keras.layers.Dense(20, activation='linear')(hidden_layer4)
 hidden_layer6 = keras.layers.Dense(20, activation='linear')(hidden_layer5)
 output_layer = keras.layers.Dense(3, activation='softmax')(hidden_layer6)

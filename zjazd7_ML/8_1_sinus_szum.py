@@ -3,16 +3,23 @@ import matplotlib.pyplot as plt
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+import random
 
 # Określenie zakresu wartości x (od -2π do 2π z krokiem 0.1)
-x = np.arange(-2 * np.pi, 2 * np.pi, 0.1)
+x = np.arange(-4 * np.pi, 4 * np.pi, 0.2)
 
 # Obliczenie wartości funkcji sinus dla każdego x
-y = np.sin(x)
+#y = []
+
+# for number in x:
+#     y.append(np.sin(number) * random.uniform(0.8, 1.2))
+y = np.array([np.sin(number) * random.uniform(0.5, 1.5) for number in x])
+#y = np.array(y)
+
 
 # Tworzenie wykresu
 plt.figure(figsize=(10, 5))  # Ustawienie rozmiaru wykresu
-plt.plot(x, y, label='sin(x)', color='blue', linewidth=2)  # Narysowanie funkcji sinus
+plt.scatter(x, y, label='sin(x)', color='blue')  # Narysowanie funkcji sinus
 
 # Dodanie tytułu i etykiet osi
 plt.title('Wykres funkcji sinus')
@@ -39,8 +46,6 @@ plt.show()
 
 model = Sequential()
 model.add(Dense(1, input_dim=1, activation='linear'))  # Warstwa wejściowa
-model.add(Dense(10, activation='linear'))
-model.add(Dense(10, activation='linear'))
 model.add(Dense(10, activation='relu'))
 model.add(Dense(10, activation='sigmoid'))
 model.add(Dense(10, activation='linear'))
@@ -77,3 +82,7 @@ plt.xticks(
 )
 
 plt.show()
+
+
+
+
