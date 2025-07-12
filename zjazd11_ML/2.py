@@ -24,7 +24,7 @@ model = PPO(
     },
 
     # Parametry algorytmu
-    learning_rate=3e-4,  # Szybkość uczenia (może być liniowo malejąca)
+    learning_rate=4e-4,  # Szybkość uczenia (może być liniowo malejąca)
     n_steps=1024,  # Kroki na środowisko przed aktualizacją
     batch_size=64,  # Rozmiar batcha do optymalizacji
     n_epochs=10,  # Liczba epok na aktualizację
@@ -40,7 +40,7 @@ model = PPO(
 
     # Logowanie
     tensorboard_log="./ppo_pendulum_tensorboard/",  # Logi dla TensorBoard
-    verbose=1  # Poziom szczegółowości (0-2)
+    verbose=2  # Poziom szczegółowości (0-2)
 )
 
 # 3. Callback do okresowej ewaluacji
@@ -54,7 +54,7 @@ eval_callback = EvalCallback(
 )
 
 # 4. Trening
-total_timesteps = 50000
+total_timesteps = 100000
 model.learn(
     total_timesteps=total_timesteps,
     callback=eval_callback,
