@@ -71,7 +71,7 @@ mean_reward, std_reward = evaluate_policy(
 print(f"\nKońcowa średnia nagroda: {mean_reward:.2f} ± {std_reward:.2f}")
 
 # 6. Testowanie modelu
-test_env = gym.make("Pendulum-v1")
+test_env = gym.make("Pendulum-v1", render_mode='human')
 obs, _ = test_env.reset()
 episode_reward = 0
 max_steps = 200
